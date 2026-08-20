@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
+          cache-dependency-path: ReactTodoUIMonolith-main/ReactTodoUIMonolith-main/package-lock.json
 
       - name: Install Dependencies
         working-directory: ./ReactTodoUIMonolith-main/ReactTodoUIMonolith-main
