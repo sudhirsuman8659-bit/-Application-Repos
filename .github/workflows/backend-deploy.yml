@@ -21,8 +21,8 @@ jobs:
       - name: Copy Backend Code
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ env.4.240.11.158 }}
-          username: ${{ env.azureuser }}
+          host: ${{ env.BACKEND_HOST }}
+          username: ${{ env.BACKEND_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
           source: "."
@@ -32,8 +32,8 @@ jobs:
       - name: Deploy Backend
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ env.4.240.11.158 }}
-          username: ${{ env.azureuser }}
+          host: ${{ env.BACKEND_HOST }}
+          username: ${{ env.BACKEND_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
 

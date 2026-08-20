@@ -25,19 +25,21 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
+        working-directory: ./ReactTodoUIMonolith-main/ReactTodoUIMonolith-main
         run: npm install
 
       - name: Build React Application
+        working-directory: ./ReactTodoUIMonolith-main/ReactTodoUIMonolith-main
         run: npm run build
 
       - name: Copy Build to Frontend VM
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ env.20.193.243.44 }}
-          username: ${{ env.azureuser }}
+          host: ${{ env.FRONTEND_HOST }}
+          username: ${{ env.FRONTEND_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
-          source: "build/*"
+          source: "ReactTodoUIMonolith-main/ReactTodoUIMonolith-main/build/*"
           target: "/tmp/todo-build"
           strip_components: 1
           overwrite: true
@@ -45,8 +47,8 @@ jobs:
       - name: Deploy Frontend
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ env.20.193.243.44 }}
-          username: ${{ env.azureuser }}
+          host: ${{ env.FRONTEND_HOST }}
+          username: ${{ env.FRONTEND_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
 
