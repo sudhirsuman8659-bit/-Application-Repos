@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FRONTEND_HOST: "20.193.243.44"
+      FRONTEND_HOST: "104.211.117.15"
       FRONTEND_USER: "azureuser"
 
     steps:

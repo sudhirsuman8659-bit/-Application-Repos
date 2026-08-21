@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BACKEND_HOST: "4.240.11.158"
+      BACKEND_HOST: "4.247.132.65"
       BACKEND_USER: "azureuser"
 
     steps:
