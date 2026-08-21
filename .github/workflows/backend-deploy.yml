@@ -11,7 +11,7 @@ jobs:
 
     env:
       BACKEND_HOST: "4.247.132.65"
-      BACKEND_USER: "azureuser"
+      BACKEND_USER: "azurerm"
 
     steps:
 

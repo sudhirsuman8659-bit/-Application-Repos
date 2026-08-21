@@ -11,7 +11,7 @@ jobs:
 
     env:
       FRONTEND_HOST: "104.211.117.15"
-      FRONTEND_USER: "azureuser"
+      FRONTEND_USER: "azurerm"
 
     steps:
 
